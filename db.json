@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Porter",
+      "author": "J. K. Rowling",
+      "cost": 420
+    },
+    {
+      "title": "Test",
+      "author": "test",
+      "cost": "30",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<div class="m-3 container">
+    <button type="button" class="btn btn-warning btn-md mb-3 text-light"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        Add
+    </button>
+
+    <div class="row">
+        <ng-container *ngFor="let data of bookData">
+            <div class="col-lg-4 col-md-3 col-sm-2 ">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{data.title}}</h5>
+                        <p class="card-text">{{data.author}}</p>
+                        <a class="btn btn-primary btn-sm">{{data.cost}}</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form [formGroup]="booksForm" (ngSubmit)="onSubmit()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add/Update Book</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeModal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="booksTitle" class="form-label">Title</label>
+                    <input type="email" class="form-control" id="booksTitle"  formControlName="title" placeholder="Enter book title">
+                </div>
+                <div class="mb-3">
+                    <label for="booksAuthor" class="form-label">Author</label>
+                    <input type="email" class="form-control" id="booksAuthor"  formControlName="author" placeholder="Enter author name">
+                </div>
+                <div class="mb-3">
+                    <label for="bookCost" class="form-label">cost</label>
+                    <input type="email" class="form-control" id="bookCost"  formControlName="cost" placeholder="Enter book cost">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
